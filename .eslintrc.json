@@ -1,5 +1,5 @@
 {
-  "parser": "babel-eslint",
+  "parser": "typescript-eslint-parser",
   "extends": ["airbnb"],
   "env": {
     "browser": true,
@@ -9,5 +9,11 @@
     "no-console": "off",
     "comma-dangle": "off",
     "react/jsx-filename-extension": "off"
+  },
+  "plugins": [
+    "typescript"
+  ],
+  "settings": {
+    "import/resolver": "webpack"
   }
 }

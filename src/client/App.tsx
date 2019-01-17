@@ -1,19 +1,33 @@
-import React, { Component } from 'react';
+import * as React from 'react';
 import './app.scss';
-import ReactImage from './react.png';
+import * as ReactImage from './react.png';
 
-export default class App extends Component {
-  state = { username: null };
+const { PureComponent } = React;
+
+interface MyProps {
+
+}
+
+interface MyState {
+  username: string
+}
+
+export default class App extends PureComponent <MyProps, MyState> {
+  constructor(props: object) {
+    super(props);
+
+    this.state = {
+      username: null
+    };
+  }
 
   componentDidMount() {
-    debugger;
     fetch('/api/getUsername')
       .then(res => res.json())
       .then(user => this.setState({ username: user.username }));
   }
 
   render() {
-    debugger;
     const { username } = this.state;
     return (
       <div>
