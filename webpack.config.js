@@ -6,15 +6,18 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const outputDirectory = 'dist';
 
 module.exports = {
-    entry: ['babel-polyfill', './src/client/index.js'],
+    entry: ['babel-polyfill', './src/client/index.jsx'],
     output: {
         path: path.join(__dirname, outputDirectory),
         filename: 'bundle.js'
     },
+    resolve: {
+        extensions: ['.js', '.jsx']
+    },
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.js?$|\.jsx?$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader'
@@ -43,8 +46,6 @@ module.exports = {
             filename: 'style.css',
         }),
         new HtmlWebpackPlugin({
-            inject: false,
-            hash: true,
             template: './public/index.html',
             favicon: './public/favicon.ico'
         })
