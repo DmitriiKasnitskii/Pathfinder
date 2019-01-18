@@ -1,4 +1,3 @@
-import * as IAPP from './IApp'
 import * as React from 'react';
 import './app.scss';
 import * as ReactImage from './react.png';
