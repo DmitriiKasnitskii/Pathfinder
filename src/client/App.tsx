@@ -1,16 +1,10 @@
+import * as IAPP from './IApp'
 import * as React from 'react';
 import './app.scss';
 import * as ReactImage from './react.png';
+import {MyProps, MyState} from "./IApp";
 
 const { PureComponent } = React;
-
-interface MyProps {
-
-}
-
-interface MyState {
-  username: string
-}
 
 export default class App extends PureComponent <MyProps, MyState> {
   constructor(props: object) {
