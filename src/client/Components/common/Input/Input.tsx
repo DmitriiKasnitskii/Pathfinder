@@ -2,7 +2,7 @@ import * as React from 'react';
 import { MyProps, MyState } from './IInput';
 
 export default class Input extends React.PureComponent <MyProps, MyState> {
-  constructor(props: object) {
+  constructor(props: {style: {}}) {
     super(props);
 
     this.state = {
