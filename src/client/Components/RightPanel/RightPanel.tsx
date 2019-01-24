@@ -1,10 +1,11 @@
 import * as React from 'react';
-import { MyProps, MyState } from './ILeftPanel';
-import './assets/leftpanel.scss';
+import { MyProps, MyState } from './IRightPanel';
+import './assets/rightpanel.scss';
+import Input from '../common/Input/Input';
 
 const { PureComponent } = React;
 
-export default class LeftPanel extends PureComponent <MyProps, MyState> {
+export default class RightPanel extends PureComponent <MyProps, MyState> {
   constructor(props: object) {
     super(props);
 
@@ -29,13 +30,20 @@ export default class LeftPanel extends PureComponent <MyProps, MyState> {
 
     render() {
       const { isOpened } = this.state;
+      const style = {
+        position: 'absolute',
+        display: 'flex',
+        alignSelf: 'center',
+        width: '240px',
+        height: '50px',
+        bottom: '0',
+        marginBottom: '2px',
+      };
 
       return (
-        <div className={`leftPanel ${isOpened ? 'opened' : 'closed'}`}>
-          <a href="/">Sheet 1</a>
-          <a href="/">Sheet 1</a>
-          <a href="/">Sheet 1</a>
+        <div className={`rightPanel ${isOpened ? 'opened' : 'closed'}`}>
           <div onClick={this.togglePanel} className={`${isOpened ? 'closeBtn' : 'openBtn'}`} />
+          <Input style={style} />
         </div>
       );
     }
