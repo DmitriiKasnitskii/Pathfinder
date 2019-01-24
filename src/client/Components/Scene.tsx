@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { MyProps, MyState } from './IScene';
+import LeftPanel from './LeftPanel/LeftPanel';
 
 const { PureComponent } = React;
 
@@ -15,6 +16,10 @@ export default class Scene extends PureComponent <MyProps, MyState> {
   }
 
   render() {
-    return <h1>Hello</h1>;
+    return (
+      <div>
+        <LeftPanel />
+      </div>
+    );
   }
 }
