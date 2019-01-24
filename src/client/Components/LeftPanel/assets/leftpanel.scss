@@ -1,0 +1,45 @@
+.btn {
+  position: relative;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  margin-top: -5em;
+  left: 140px;
+  background-position: center;
+  background-size: contain;
+  background-image: url("img/closeBtn.svg");
+  transition: transform 0.5s;
+}
+
+.leftPanel {
+  position: absolute;
+  width: 150px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: bisque;
+  a {
+    margin-bottom: 20px;
+  }
+
+  &.opened {
+    left: 0;
+  }
+
+  &.closed {
+    left: -150px;
+  }
+
+  transition: left linear 0.3s;
+}
+
+.openBtn {
+  @extend .btn;
+  transform: rotate(180deg);
+}
+
+.closeBtn {
+  @extend .btn;
+  left: 130px;
+}

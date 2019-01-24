@@ -6,52 +6,52 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const outputDirectory = 'dist';
 
 module.exports = {
-    entry: ['babel-polyfill', './src/client/index.tsx', './src/server/index.js'],
-    output: {
-        path: path.join(__dirname, outputDirectory),
-        filename: 'bundle.js'
-    },
-    resolve: {
-        extensions: ['.ts', '.tsx', '.js']
-    },
-    module: {
-        rules: [
-            {
-                test: /\.js?$|\.jsx?$|\.tsx?$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'ts-loader'
-                }
-            },
-            {
-                test: /\.scss$/,
-                use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
-            },
-            {
-                test: /\.(png|woff|woff2|eot|ttf|svg)$/,
-                loader: 'url-loader?limit=100000'
-            }
-        ]
-    },
-    devServer: {
-        port: 3000,
-        open: true,
-        proxy: {
-            '/api': 'http://localhost:8080'
+  entry: ['babel-polyfill', './src/client/index.tsx', './src/server/index.js'],
+  output: {
+    path: path.join(__dirname, outputDirectory),
+    filename: 'bundle.js'
+  },
+  resolve: {
+    extensions: ['.ts', '.tsx', '.js']
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js?$|\.jsx?$|\.tsx?$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'ts-loader'
         }
-    },
-    plugins: [
-        new CleanWebpackPlugin([outputDirectory]),
-        new MiniCssExtractPlugin({
-            filename: 'style.css',
-        }),
-        new HtmlWebpackPlugin({
-            template: './public/index.html',
-            favicon: './public/favicon.ico'
-        })
-    ],
-    node: {
-        fs: 'empty',
-        net: 'empty', //I don't know why, but there are some 'Can't resolve 'fs' errors
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader']
+      },
+      {
+        test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+        loader: 'url-loader?limit=100000'
+      }
+    ]
+  },
+  devServer: {
+    port: 3000,
+    open: true,
+    proxy: {
+      '/api': 'http://localhost:8080'
     }
+  },
+  plugins: [
+    new CleanWebpackPlugin([outputDirectory]),
+    new MiniCssExtractPlugin({
+      filename: 'style.css',
+    }),
+    new HtmlWebpackPlugin({
+      template: './public/index.html',
+      favicon: './public/favicon.ico'
+    })
+  ],
+  node: {
+    fs: 'empty',
+    net: 'empty', // I don't know why, but there are some 'Can't resolve 'fs' errors
+  }
 };
