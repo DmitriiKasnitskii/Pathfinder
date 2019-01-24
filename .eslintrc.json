@@ -8,7 +8,8 @@
   "rules": {
     "no-console": "off",
     "comma-dangle": "off",
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "no-unused-vars": "off" //supress incorrect worn an import rule in typeScript
   },
   "plugins": [
     "typescript"

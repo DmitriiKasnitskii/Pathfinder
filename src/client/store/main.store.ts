@@ -2,7 +2,7 @@ import { configureStore } from 'redux-starter-kit';
 import rootReducer from '../reducers/main.reducer';
 
 const store = configureStore({
-    reducer: rootReducer
+  reducer: rootReducer
 });
 
-export default store
+export default store;

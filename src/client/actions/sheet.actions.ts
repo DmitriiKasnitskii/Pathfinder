@@ -1,4 +1,4 @@
 export default {
-    INCREASE: 'INCREASE',
-    DECREASE: 'DECREASE'
-}
+  INCREASE: 'INCREASE',
+  DECREASE: 'DECREASE'
+};

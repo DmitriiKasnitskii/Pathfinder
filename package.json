@@ -1,7 +1,7 @@
 {
-  "name": "simple-react-full-stack",
+  "name": "pathfinder-game-app",
   "version": "1.0.0",
-  "description": "Boilerplate to build a full stack web application using React, Node.js, Express and Webpack.",
+  "description": "This app consist of client and server parts based on various technologies (see readme)",
   "main": "src/server/index.js",
   "scripts": {
     "build": "webpack --mode production",
@@ -21,6 +21,7 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^6.0.0",
+    "react-scripts": "^2.1.3",
     "redux": "^4.0.1",
     "redux-starter-kit": "^0.4.0"
   },
@@ -41,6 +42,7 @@
     "eslint": "^5.0.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-import-resolver-webpack": "^0.10.1",
+    "eslint-plugin-import": "^2.15.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.7.0",
     "eslint-plugin-typescript": "^0.14.0",

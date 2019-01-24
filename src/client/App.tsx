@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './app.scss';
-import * as ReactImage from './react.png';
-import {MyProps, MyState} from "./IApp";
+import { MyProps, MyState } from './IApp';
+import Scene from './Components/Scene';
 
 const { PureComponent } = React;
 
@@ -10,22 +10,21 @@ export default class App extends PureComponent <MyProps, MyState> {
     super(props);
 
     this.state = {
-      username: null
+      isLoaded: true
     };
   }
 
   componentDidMount() {
-    fetch('/api/getUsername')
-      .then(res => res.json())
-      .then(user => this.setState({ username: user.username }));
+    // fetch('/api/getUsername')
+    //   .then(res => res.json())
+    //   .then(user => this.setState({ username: user.username }));
   }
 
   render() {
-    const { username } = this.state;
+    const { isLoaded } = this.state;
     return (
       <div>
-        {username ? <h1>{`Hello ${username}`}</h1> : <h1>Loading.. please wait!</h1>}
-        <img src={ReactImage} alt="react" />
+        {isLoaded ? <Scene /> : <h1>Loading.. please wait!</h1>}
       </div>
     );
   }
