@@ -1,13 +1,14 @@
 import * as React from 'react';
 import { MyProps } from './IStatSheet';
 import './assets/statsheet.scss';
+import TopPart from '../TopPart/TopPart';
 
 const StatSheet = (props: MyProps) => (
   props.visible && (
     <div>
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
+      <TopPart />
     </div>
   )
 );
+
+export default StatSheet;

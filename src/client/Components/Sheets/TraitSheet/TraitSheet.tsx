@@ -11,3 +11,5 @@ const TraitSheet = (props: MyProps) => (
     </div>
   )
 );
+
+export default TraitSheet;

@@ -1,6 +1,6 @@
-export default {
+export const mainData = {
   CharacterName: 'Arf De Kar',
-  PlayerName: 'Kobelev',
+  PlayerName: 'Sergey Kobelev',
   Deity: 'None',
   Religion: 'None',
   Alignment: 'Chaotic Good',
@@ -17,7 +17,11 @@ export default {
   Speed: 'Walk 30 ft.',
   Eyes: '',
   Hair: '',
-  Points: 15,
+  Points: 15
+};
+
+export const stats = {
+
   StatSheet: {
     STR: {
       BaseScore: 14

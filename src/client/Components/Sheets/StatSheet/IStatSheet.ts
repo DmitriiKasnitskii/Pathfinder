@@ -1,5 +1,5 @@
 export interface MyProps {
-    visible: true
+    visible: boolean
 }
 
 export interface MyState {

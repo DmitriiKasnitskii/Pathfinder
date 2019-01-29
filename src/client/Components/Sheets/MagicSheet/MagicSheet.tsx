@@ -11,3 +11,5 @@ const MagicSheet = (props: MyProps) => (
   </div>
   )
 );
+
+export default MagicSheet;

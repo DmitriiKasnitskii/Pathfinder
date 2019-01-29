@@ -11,3 +11,5 @@ const BioSheet = (props: MyProps) => (
     </div>
   )
 );
+
+export default BioSheet;
