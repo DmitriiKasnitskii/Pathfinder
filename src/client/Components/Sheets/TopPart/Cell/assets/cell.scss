@@ -1,8 +1,8 @@
 .cell {
   border-bottom: 1px solid black;
-  line-height: 70px;
+  line-height: 75px;
   margin: 0 10px;
-  padding-left: 5px;
+  padding-left: 3px;
   text-align: left;
 
   .value {
@@ -13,7 +13,7 @@
   .placeholder {
     position: relative;
     display: inline-block;
-    top: 25px;
-    font-size: 14px;
+    top: 18px;
+    font-size: 11px;
   }
 }

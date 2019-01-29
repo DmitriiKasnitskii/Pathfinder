@@ -7,21 +7,19 @@ export const mainData = {
   Class: 'Sorcerer',
   Race: 'Aasimar / Outsider',
   Size: 'Medium / 5ft',
-  Height: "6' 4\"",
-  Vision: 'Darkvision (60 ft.)',
+  Gender: 'Male',
   CharacterLevel: 1,
   ExperienceCur: 0,
   ExperienceNext: 2000,
-  Age: 20,
-  Gender: 'Male',
   Speed: 'Walk 30 ft.',
+  Vision: 'Darkvision (60 ft.)',
+  Height: "6' 4\"",
+  Age: 20,
   Eyes: '',
   Hair: '',
-  Points: 15
 };
 
 export const stats = {
-
   StatSheet: {
     STR: {
       BaseScore: 14

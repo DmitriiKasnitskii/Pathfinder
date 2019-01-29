@@ -10,7 +10,8 @@
     "comma-dangle": "off",
     "react/jsx-filename-extension": "off",
     "no-unused-vars": "off", //supress incorrect worn an import rule in typeScript
-    "guard-for-in": "off" //supress for in
+    "guard-for-in": "off", //supress for in
+    "linebreak-style": "off"
   },
   "plugins": [
     "typescript"
