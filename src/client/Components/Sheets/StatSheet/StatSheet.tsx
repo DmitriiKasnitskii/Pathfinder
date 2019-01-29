@@ -5,7 +5,7 @@ import TopPart from '../TopPart/TopPart';
 
 const StatSheet = (props: MyProps) => (
   props.visible && (
-    <div>
+    <div className="sheet">
       <TopPart />
     </div>
   )

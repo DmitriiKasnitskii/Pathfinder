@@ -19,11 +19,11 @@ export default class Scene extends PureComponent <MyProps, MyState> {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <LeftPanel />
-        <StatSheet visible />
         <RightPanel />
-      </div>
+        <StatSheet visible />
+      </React.Fragment>
     );
   }
 }

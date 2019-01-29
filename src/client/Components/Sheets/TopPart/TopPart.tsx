@@ -1,24 +1,19 @@
 import * as React from 'react';
 import './assets/toppart.scss';
+import { mainData } from '../sheet.mock';
+import Cell from './Cell/Cell';
 
-const TopPart = () => (
-  <div>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-    <div>1</div>
-    <div>2</div>
-    <div>3</div>
-    <div>4</div>
-    <div>5</div>
-  </div>
-);
+const TopPart = () => {
+  const cells = [];
+  for (const key in mainData) {
+    cells.push(<Cell key={key} value={mainData[key]} placeholder={key} />);
+  }
+
+  return (
+    <div className="topPart">
+      {cells}
+    </div>
+  );
+};
 
 export default TopPart;
