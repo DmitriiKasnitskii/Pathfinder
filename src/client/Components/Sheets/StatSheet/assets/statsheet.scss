@@ -1,4 +1,10 @@
 .sheet {
+  display: grid;
+  grid-template:
+          "a a a"
+          "b b c"
+          "d d c";
+  grid-template-rows: 110px 255px auto;
   max-width: 50vw;
   height: 98vh;
   min-width: 400px;

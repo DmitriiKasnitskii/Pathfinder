@@ -5,7 +5,7 @@ import './assets/cell.scss';
 const Cell = (props: MyProps) => {
   const { value, placeholder } = props;
   return (
-    <div className="cell">
+    <div className="topPartCell">
       <div className="value">{value}</div>
       <div className="placeholder">{placeholder}</div>
     </div>

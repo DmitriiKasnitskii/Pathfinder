@@ -197,25 +197,46 @@ export const skills = {
   },
 };
 
-export const stats = {
+export const mainStats = {
   STR: {
-    BaseScore: 14
+    BaseScore: 14,
+    BaseMod: 1,
+    AbilityScore: 14,
+    AbilityMod: 1,
   },
   DEX: {
-    BaseScore: 14
+    BaseScore: 14,
+    BaseMod: 1,
+    AbilityScore: 14,
+    AbilityMod: 1,
   },
   CON: {
-    BaseScore: 10
+    BaseScore: 10,
+    BaseMod: 1,
+    AbilityScore: 10,
+    AbilityMod: 1,
   },
   INT: {
-    BaseScore: 12
+    BaseScore: 12,
+    BaseMod: 1,
+    AbilityScore: 12,
+    AbilityMod: 1,
   },
   WIS: {
-    BaseScore: 10
+    BaseScore: 10,
+    BaseMod: 1,
+    AbilityScore: 10,
+    AbilityMod: 1,
   },
   CHA: {
-    BaseScore: 16
+    BaseScore: 16,
+    BaseMod: 1,
+    AbilityScore: 16,
+    AbilityMod: 1,
   },
+};
+
+export const savingThrows = {
   FORT: {
     Base: 0,
     Ability: 0,
