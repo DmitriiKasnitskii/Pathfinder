@@ -1,5 +1,5 @@
 export interface MyProps {
-  openPopup: any
+  closePopup: any
 }
 
 export interface MyState {

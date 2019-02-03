@@ -3,10 +3,9 @@
   grid-template: "a a a" "b b c" "d d c";
   grid-template-rows: 110px 290px auto;
   max-width: 50vw;
-  height: 98vh;
   min-width: 700px;
   margin: 1vh auto;
-  border: 1px solid black;
+  //border: 1px solid black;
 }
 
 @media (max-width: 750px) {

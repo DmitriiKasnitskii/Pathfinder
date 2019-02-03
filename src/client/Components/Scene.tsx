@@ -1,12 +1,13 @@
 import * as React from 'react';
+import { connect } from 'react-redux';
 import { MyProps, MyState } from './IScene';
 import LeftPanel from './LeftPanel/LeftPanel';
-import RightPanel from './RightPanel/RightPanel';
 import StatSheet from './Sheets/StatSheet/StatSheet';
+import RollPopup from './common/RollPopup/RollPopup';
 
 const { PureComponent } = React;
 
-export default class Scene extends PureComponent <MyProps, MyState> {
+class Scene extends PureComponent <MyProps, MyState> {
   // constructor(props: object) {
   //   super(props);
   // }
@@ -18,12 +19,21 @@ export default class Scene extends PureComponent <MyProps, MyState> {
   }
 
   render() {
+    const { popupVisible } = this.props;
+
     return (
       <React.Fragment>
+        {popupVisible
+        && <RollPopup />}
         <LeftPanel />
-        <RightPanel />
         <StatSheet visible />
       </React.Fragment>
     );
   }
 }
+
+const mapStateToProps = (state: { popupReducer: { isVisible: any; }; }) => ({
+  popupVisible: state.popupReducer.isVisible
+});
+
+export default connect(mapStateToProps, null)(Scene);

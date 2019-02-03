@@ -23,7 +23,7 @@ export default class App extends PureComponent <MyProps, MyState> {
   render() {
     const { isLoaded } = this.state;
     return (
-      <div>
+      <div className="scene">
         {isLoaded ? <Scene /> : <h1>Loading.. please wait!</h1>}
       </div>
     );
