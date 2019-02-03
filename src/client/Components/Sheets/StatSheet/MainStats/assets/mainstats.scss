@@ -3,6 +3,8 @@
   width: 20vw;
   top: 30px;
   grid-area: b;
+  min-width: 300px;
+  max-width: 350px;
 
   thead {
     td {
@@ -38,5 +40,12 @@
         background: blue;
       }
     }
+  }
+}
+
+@media (max-width: 660px) {
+  .mainStats {
+    top: 0;
+    margin: 0 auto;
   }
 }

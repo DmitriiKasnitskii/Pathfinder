@@ -5,8 +5,16 @@
   grid-area: a;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 750px) {
   .topPart {
-    grid-template-columns: 1.5fr 1.5fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(6, 40px);
+  }
+}
+
+@media (max-width: 400px) {
+  .topPart {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(9, 40px);
   }
 }

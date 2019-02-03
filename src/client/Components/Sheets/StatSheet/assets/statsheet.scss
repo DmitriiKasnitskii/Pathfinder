@@ -1,13 +1,37 @@
 .sheet {
   display: grid;
-  grid-template:
-          "a a a"
-          "b b c"
-          "d d c";
+  grid-template: "a a a" "b b c" "d d c";
   grid-template-rows: 110px 255px auto;
   max-width: 50vw;
   height: 98vh;
-  min-width: 400px;
+  min-width: 700px;
   margin: 1vh auto;
   border: 1px solid black;
+}
+
+@media (max-width: 750px) {
+  .sheet {
+    grid-template: "a a" 250px "b c" "d c";
+    width: 97vw;
+    max-width: inherit;
+    min-width: inherit;
+  }
+}
+
+@media (max-width: 660px) {
+  .sheet {
+    grid-template: "a" 270px "b" 270px "d" 130px "c";
+    width: 97vw;
+    min-width: 370px;
+    max-width: inherit;
+  }
+}
+
+@media (max-width: 400px) {
+  .sheet {
+    grid-template: "a" 400px "b" 270px "d" 130px "c";
+    width: 97vw;
+    min-width: 370px;
+    max-width: inherit;
+  }
 }

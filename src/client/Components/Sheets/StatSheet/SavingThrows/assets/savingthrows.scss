@@ -3,6 +3,8 @@
   width: 20vw;
   top: 30px;
   grid-area: d;
+  min-width: 300px;
+  max-width: 350px;
 
   thead {
     td {
@@ -32,5 +34,18 @@
         border: 1px solid red;
       }
     }
+  }
+}
+
+@media (max-width: 750px) {
+  .savingThrows {
+    top: -250px;
+  }
+}
+
+@media (max-width: 660px) {
+  .savingThrows {
+    top: 0;
+    margin: 0 auto;
   }
 }

@@ -4,6 +4,8 @@
   width: 25vw;
   top: 30px;
   grid-area: c;
+  min-width: 350px;
+  max-width: 450px;
 
   thead {
     td {
@@ -18,5 +20,11 @@
 
   .skillName {
 
+  }
+}
+
+@media (max-width: 660px) {
+  .skills {
+    margin: 0 auto;
   }
 }
