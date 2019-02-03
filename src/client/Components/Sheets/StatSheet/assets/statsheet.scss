@@ -1,7 +1,7 @@
 .sheet {
   display: grid;
   grid-template: "a a a" "b b c" "d d c";
-  grid-template-rows: 110px 255px auto;
+  grid-template-rows: 110px 290px auto;
   max-width: 50vw;
   height: 98vh;
   min-width: 700px;
@@ -11,7 +11,7 @@
 
 @media (max-width: 750px) {
   .sheet {
-    grid-template: "a a" 250px "b c" "d c";
+    grid-template: "a a" 250px "b c" 290px "d c";
     width: 97vw;
     max-width: inherit;
     min-width: inherit;
