@@ -1,5 +1,6 @@
 .mainStats {
   position: relative;
+  table-layout: fixed;
   width: 20vw;
   top: 30px;
   grid-area: b;
@@ -29,11 +30,11 @@
       border: 1px solid black;
 
       &.ability {
-        background: green;
+        //background: green;
       }
 
       &.temp {
-        background: blue;
+        //background: blue;
       }
     }
   }

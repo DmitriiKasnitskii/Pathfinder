@@ -1,5 +1,5 @@
 export interface MyProps {
-    style: {},
+    style?: {},
     label?: string,
     initValue?: string
 }
