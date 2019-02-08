@@ -199,40 +199,40 @@ export const skills = {
 
 export const mainStats = {
   STR: {
-    BaseScore: 14,
-    BaseMod: 1,
-    AbilityScore: 14,
-    AbilityMod: 1,
+    abilityScore: 14,
+    tempAdj: 14,
+    EN: 'Strength',
+    RU: 'Сила'
   },
   DEX: {
-    BaseScore: 14,
-    BaseMod: 1,
-    AbilityScore: 14,
-    AbilityMod: 1,
+    abilityScore: 14,
+    tempAdj: 14,
+    EN: 'Dexterity',
+    RU: 'Ловкость'
   },
   CON: {
-    BaseScore: 10,
-    BaseMod: 1,
-    AbilityScore: 10,
-    AbilityMod: 1,
+    abilityScore: 10,
+    tempAdj: 10,
+    EN: 'Constitution',
+    RU: 'Телосложение'
   },
   INT: {
-    BaseScore: 12,
-    BaseMod: 1,
-    AbilityScore: 12,
-    AbilityMod: 1,
+    abilityScore: 12,
+    tempAdj: 12,
+    EN: 'Intelligence',
+    RU: 'Интеллект'
   },
   WIS: {
-    BaseScore: 10,
-    BaseMod: 1,
-    AbilityScore: 10,
-    AbilityMod: 1,
+    abilityScore: 10,
+    tempAdj: 10,
+    EN: 'Wisdom',
+    RU: 'Воля'
   },
   CHA: {
-    BaseScore: 16,
-    BaseMod: 1,
-    AbilityScore: 16,
-    AbilityMod: 1,
+    abilityScore: 16,
+    tempAdj: 16,
+    EN: 'Charisma',
+    RU: 'Харизма'
   },
 };
 

@@ -1,12 +1,15 @@
 import * as React from 'react';
 import { MyProps, MyState } from './IInput';
+import { IDgen } from '../lib';
 
 export default class Input extends React.PureComponent <MyProps, MyState> {
-  constructor(props: {style: {}}) {
+  constructor(props: {style: {}, label: string, initValue: string}) {
     super(props);
 
+    const { initValue } = this.props;
+
     this.state = {
-      value: ''
+      value: initValue
     };
   }
 
@@ -19,10 +22,14 @@ export default class Input extends React.PureComponent <MyProps, MyState> {
 
   render() {
     const { value } = this.state;
-    const { style } = this.props;
+    const { style, label } = this.props;
+    const id: string = IDgen();
 
     return (
-      <input value={value} style={style} onChange={this.onChange} />
+      <label htmlFor={id}>
+        {label}
+        <input id={id} value={value} style={style} onChange={this.onChange} />
+      </label>
     );
   }
 }

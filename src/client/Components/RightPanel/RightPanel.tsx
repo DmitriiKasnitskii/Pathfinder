@@ -42,8 +42,8 @@ export default class RightPanel extends PureComponent <MyProps, MyState> {
 
       return (
         <div className={`rightPanel ${isOpened ? 'opened' : 'closed'}`}>
-          <div onClick={this.togglePanel} className={`${isOpened ? 'closeBtn' : 'openBtn'}`} />
-          <Input style={style} />
+          <div tabIndex={0} role="button" onKeyDown={this.togglePanel} onClick={this.togglePanel} className={`${isOpened ? 'closeBtn' : 'openBtn'}`} />
+          <Input style={style} label="Message" />
         </div>
       );
     }

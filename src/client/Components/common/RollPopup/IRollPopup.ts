@@ -1,5 +1,6 @@
 export interface MyProps {
-  closePopup: any
+  closePopup: any,
+  initValue: string
 }
 
 export interface MyState {

@@ -8,14 +8,14 @@ import { MyProps, MyState } from './ISkillsTable';
 class SkillsTable extends React.PureComponent<MyProps, MyState> {
   render() {
     const { openPopup } = this.props;
-    const rows = [];
+    const rows: any = [];
 
-    for (const key in skills) {
+    Object.keys(skills).forEach((key) => {
       if (skills[key].Untrained) {
         rows.push(
           <tr key={key}>
             <td>1</td>
-            <td className="skillName" onKeyPress={openPopup} onClick={openPopup}>{key}</td>
+            <td className="skillName" onKeyPress={openPopup} onClick={() => { openPopup(3); }}>{key}</td>
             <td>3</td>
             <td>4</td>
             <td>5</td>
@@ -24,7 +24,7 @@ class SkillsTable extends React.PureComponent<MyProps, MyState> {
           </tr>
         );
       }
-    }
+    });
 
     return (
       <table className="skills">
@@ -49,7 +49,12 @@ class SkillsTable extends React.PureComponent<MyProps, MyState> {
 
 
 const mapDispatchToProps = (dispatch: any) => ({
-  openPopup: () => dispatch({ type: setVisibilityPopup.OPEN })
+  openPopup: (value: string) => dispatch(
+    {
+      type: setVisibilityPopup.OPEN,
+      payload: { initValue: value }
+    }
+  )
 });
 
 export default connect(null, mapDispatchToProps)(SkillsTable);
