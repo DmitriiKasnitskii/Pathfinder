@@ -11,8 +11,8 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "jest"
   },
-  "author": "Sandeep Raveesh",
-  "license": "ISC",
+  "author": "Kasnitsky Dmitry",
+  "license": "MIT",
   "dependencies": {
     "@types/react-redux": "^7.0.0",
     "autoprefixer": "^9.4.5",

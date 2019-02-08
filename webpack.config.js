@@ -49,9 +49,5 @@ module.exports = {
       template: './public/index.html',
       favicon: './public/favicon.ico'
     })
-  ],
-  node: {
-    fs: 'empty',
-    net: 'empty', // I don't know why, but there are some 'Can't resolve 'fs' errors
-  }
+  ]
 };
