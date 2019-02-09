@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import { MyProps, MyState } from './ILeftPanel';
 import './assets/leftpanel.scss';
 
@@ -32,10 +33,11 @@ export default class LeftPanel extends PureComponent <MyProps, MyState> {
 
       return (
         <div className={`leftPanel ${isOpened ? 'opened' : 'closed'}`}>
-          <a href="/">Sheet 1</a>
-          <a href="/">Sheet 1</a>
-          <a href="/">Sheet 1</a>
-          <div onClick={this.togglePanel} className={`${isOpened ? 'closeBtn' : 'openBtn'}`} />
+          <Link to="/">Stats</Link>
+          <Link to="/Magic">Magic</Link>
+          <Link to="/Bio">Bio</Link>
+          <Link to="/Traits">Traits</Link>
+          <div role="button" tabIndex={0} onKeyDown={this.togglePanel} onClick={this.togglePanel} className={`${isOpened ? 'closeBtn' : 'openBtn'}`} />
         </div>
       );
     }

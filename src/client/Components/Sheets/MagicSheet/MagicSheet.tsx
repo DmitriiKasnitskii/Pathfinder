@@ -1,15 +1,14 @@
 import * as React from 'react';
-import { MyProps } from './IMagicSheet';
 import './assets/magicsheet.scss';
+import TopPart from '../TopPart/TopPart';
 
-const MagicSheet = (props: MyProps) => (
-  props.visible && (
+const MagicSheet = () => (
   <div>
+    <TopPart />
     <div>1</div>
     <div>2</div>
     <div>3</div>
   </div>
-  )
 );
 
 export default MagicSheet;
