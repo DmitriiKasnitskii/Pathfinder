@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Route, Switch } from 'react-router-dom';
+import { connect } from 'react-redux';
 import RollPopup from './common/RollPopup/RollPopup';
 import StatSheet from './Sheets/StatSheet/StatSheet';
 import BioSheet from './Sheets/BioSheet/BioSheet';
@@ -26,4 +27,4 @@ const mapStateToProps = (state: { popupReducer: { isVisible: any; }; }) => ({
   popupVisible: state.popupReducer.isVisible
 });
 
-export default (Scene);
+export default connect(mapStateToProps, null)(Scene);
