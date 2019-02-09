@@ -6,9 +6,10 @@ import StatSheet from './Sheets/StatSheet/StatSheet';
 import BioSheet from './Sheets/BioSheet/BioSheet';
 import MagicSheet from './Sheets/MagicSheet/MagicSheet';
 import TraitSheet from './Sheets/TraitSheet/TraitSheet';
+import { MyProps } from './IScene';
 
-function Scene() {
-  const popupVisible = false;
+function Scene(props: MyProps) {
+  const { popupVisible } = props;
 
   return (
     <div>

@@ -1,5 +1,5 @@
 export interface MyProps {
-  popupVisible?: boolean;
+  popupVisible: boolean;
 }
 
 export interface MyState {
