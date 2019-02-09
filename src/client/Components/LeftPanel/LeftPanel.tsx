@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { MyProps, MyState } from './ILeftPanel';
 import './assets/leftpanel.scss';
 
-const { PureComponent } = React;
+const { Component } = React;
 
-export default class LeftPanel extends PureComponent <MyProps, MyState> {
+export default class LeftPanel extends Component <MyProps, MyState> {
   constructor(props: object) {
     super(props);
 
@@ -14,12 +14,6 @@ export default class LeftPanel extends PureComponent <MyProps, MyState> {
     };
 
     this.togglePanel = this.togglePanel.bind(this);
-  }
-
-  componentDidMount() {
-    // fetch('/api/getUsername')
-    //   .then(res => res.json())
-    //   .then(user => this.setState({ username: user.username }));
   }
 
     togglePanel = () => {
