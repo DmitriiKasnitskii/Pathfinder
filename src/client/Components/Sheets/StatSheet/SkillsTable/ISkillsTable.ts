@@ -1,5 +1,5 @@
 export interface MyProps {
-  openPopup: any
+  openPopup: (initValue: string, skillName: string) => void
 }
 
 export interface MyState {

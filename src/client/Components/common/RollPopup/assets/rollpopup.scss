@@ -1,7 +1,7 @@
 .rollPopup {
   position: absolute;
   display: grid;
-  grid-template-rows: 1fr 1fr 2fr 1fr;
+  grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
   width: 500px;
   height: 400px;
   background: white;
@@ -12,8 +12,7 @@
   border-radius: 10px;
 
   .rollHeader {
-    display: flex;
-    justify-content: center;
+    display: grid;
     align-items: center;
   }
 

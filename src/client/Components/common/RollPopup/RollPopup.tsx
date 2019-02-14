@@ -7,12 +7,14 @@ import Input from '../Input/Input';
 import { rand } from '../lib';
 
 class RollPopup extends React.PureComponent<MyProps, MyState> {
-  constructor(props: {closePopup: () => void, initValue: string}) {
+  constructor(props: {closePopup: () => void, initValue: string, skillName: string}) {
     super(props);
 
+    const { initValue } = this.props;
+
     this.state = {
-      rollValue: '0',
-      modValue: '0'
+      rollValue: '1',
+      modValue: initValue
     };
   }
 
@@ -35,14 +37,23 @@ class RollPopup extends React.PureComponent<MyProps, MyState> {
   );
 
   render() {
-    const { closePopup, initValue } = this.props;
+    const { closePopup, initValue, skillName } = this.props;
     const { rollValue, modValue } = this.state;
     const rollText = 'Roll';
     const modText = 'Modifier';
 
     return (
       <div className="rollPopup">
-        <div className="rollHeader">Roll your Destiny</div>
+        <div className="rollHeader">
+          <span>Roll your Destiny</span>
+          <span style={{
+            position: 'relative',
+            top: '-10px'
+          }}
+          >
+            {`(${skillName})`}
+          </span>
+        </div>
         <div className="rollRow">
           <Input callback={this.changeRollValue} val={rollValue} label={rollText} />
           <div className="diceBtn" tabIndex={0} role="button" onKeyPress={this.getRandomNumber} onClick={this.getRandomNumber} />
@@ -69,7 +80,8 @@ const mapDispatchToProps = (dispatch: any) => ({
 });
 
 const mapStateToProps = (state: any) => ({
-  initValue: state.popupReducer.initValue
+  initValue: state.popupReducer.initValue,
+  skillName: state.popupReducer.skillName
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(RollPopup);

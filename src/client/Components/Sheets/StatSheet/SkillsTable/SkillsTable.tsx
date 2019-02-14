@@ -15,7 +15,7 @@ class SkillsTable extends React.PureComponent<MyProps, MyState> {
         rows.push(
           <tr key={key}>
             <td>1</td>
-            <td className="skillName" onKeyPress={openPopup} onClick={() => { openPopup(3); }}>{key}</td>
+            <td className="skillName" onKeyPress={() => { openPopup('3', key); }} onClick={() => { openPopup('3', key); }}>{key}</td>
             <td>3</td>
             <td>4</td>
             <td>5</td>
@@ -49,10 +49,10 @@ class SkillsTable extends React.PureComponent<MyProps, MyState> {
 
 
 const mapDispatchToProps = (dispatch: any) => ({
-  openPopup: (value: string) => dispatch(
+  openPopup: (value: string, skill: string) => dispatch(
     {
       type: setVisibilityPopup.OPEN,
-      payload: { initValue: value }
+      payload: { initValue: value, skillName: skill }
     }
   )
 });

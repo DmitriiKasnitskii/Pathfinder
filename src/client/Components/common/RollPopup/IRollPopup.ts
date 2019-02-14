@@ -1,6 +1,7 @@
 export interface MyProps {
   closePopup: () => void,
-  initValue: string
+  initValue: string,
+  skillName: string
 }
 
 export interface MyState {
