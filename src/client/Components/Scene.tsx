@@ -12,7 +12,11 @@ function Scene(props: MyProps) {
   const { popupVisible } = props;
 
   return (
-    <div>
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center'
+    }}
+    >
       {popupVisible && <RollPopup />}
       <Switch>
         <Route exact path="/" component={StatSheet} />

@@ -1,8 +1,9 @@
 export interface MyProps {
-  closePopup: any,
+  closePopup: () => void,
   initValue: string
 }
 
 export interface MyState {
-
+  rollValue: string,
+  modValue: string
 }

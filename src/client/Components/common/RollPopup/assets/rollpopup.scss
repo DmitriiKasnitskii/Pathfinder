@@ -1,13 +1,50 @@
 .rollPopup {
   position: absolute;
+  display: grid;
+  grid-template-rows: 1fr 1fr 2fr 1fr;
   width: 500px;
   height: 400px;
-  background: gray;
+  background: white;
   z-index: 1;
   margin: 0 auto;
   align-self: center;
+  border: 1px solid black;
+  border-radius: 10px;
+
+  .rollHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .rollRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .diceBtn {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      background-image: url("dices.png");
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-left: 10px;
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  .modRow {
+    margin-left: -60px;
+  }
 
   .closeButton {
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #89d689;
   }
 }

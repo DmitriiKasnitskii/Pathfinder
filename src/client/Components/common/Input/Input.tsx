@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { MyProps, MyState } from './IInput';
 import { IDgen } from '../lib';
+import './assets/input.scss';
 
 export default class Input extends React.PureComponent <MyProps, MyState> {
-  constructor(props: {style: {}, label: string, initValue: string}) {
+  constructor(props: { style: {}, label: string, initValue: string, val: string,
+    callback: (value: string) => void }) {
     super(props);
 
     const { initValue } = this.props;
@@ -13,8 +15,12 @@ export default class Input extends React.PureComponent <MyProps, MyState> {
     };
   }
 
-  onChange = (e: {persist: any, target: {value: string}}) => {
+  onChange = (e: { persist: any, target: { value: string } }) => {
     e.persist();
+    const { callback } = this.props;
+    if (callback) {
+      callback(e.target.value);
+    }
     this.setState(() => ({
       value: e.target.value
     }));
@@ -22,13 +28,13 @@ export default class Input extends React.PureComponent <MyProps, MyState> {
 
   render() {
     const { value } = this.state;
-    const { style, label } = this.props;
+    const { style, label, val } = this.props;
     const id: string = IDgen();
 
     return (
       <label htmlFor={id}>
         {label}
-        <input id={id} value={value} style={style} onChange={this.onChange} />
+        <input id={id} value={val || value} style={style} onChange={this.onChange} />
       </label>
     );
   }
