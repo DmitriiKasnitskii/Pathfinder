@@ -33,7 +33,9 @@ export default class Input extends React.PureComponent <MyProps, MyState> {
 
     return (
       <label htmlFor={id}>
-        {label}
+        <span style={{ marginRight: '10px' }}>
+          {label}
+        </span>
         <input id={id} value={val || value} style={style} onChange={this.onChange} />
       </label>
     );
