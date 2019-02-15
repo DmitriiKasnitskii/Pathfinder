@@ -7,6 +7,32 @@ import Input from '../../../common/Input/Input';
 import { MyProps, MyState } from './IMainStats';
 
 class MainStats extends React.PureComponent <MyProps, MyState> {
+  constructor(props: {locale: string}) {
+    super(props);
+
+    this.state = {
+      tempAdj: {
+        STR: mainStats.STR.tempAdj.toString(),
+        DEX: mainStats.DEX.tempAdj.toString(),
+        CON: mainStats.CON.tempAdj.toString(),
+        INT: mainStats.INT.tempAdj.toString(),
+        WIS: mainStats.WIS.tempAdj.toString(),
+        CHA: mainStats.CHA.tempAdj.toString()
+      }
+    };
+  }
+
+  changeRollValue = (e: any) => {
+    const { tempAdj } = this.state;
+    const newState = {
+      ...tempAdj,
+      [e.target.className]: e.target.value
+    };
+    this.setState(() => ({
+      tempAdj: newState
+    }));
+  };
+
   render() {
     const rows: any = [];
     const { locale } = this.props;
@@ -18,9 +44,10 @@ class MainStats extends React.PureComponent <MyProps, MyState> {
     };
 
     Object.keys(mainStats).forEach((key) => {
-      const { abilityScore, tempAdj } = mainStats[key];
+      const { abilityScore } = mainStats[key];
+      const { tempAdj } = this.state;
       const abilityMod = calcMod((abilityScore - 10), 2);
-      const tempMod = calcMod((tempAdj - 10), 2);
+      const tempMod = calcMod((tempAdj[key] - 10), 2);
       const fullName = mainStats[key][locale];
 
       rows.push(
@@ -32,7 +59,12 @@ class MainStats extends React.PureComponent <MyProps, MyState> {
           <td className="cell ability disabled">{abilityScore}</td>
           <td className="cell ability disabled">{abilityMod}</td>
           <td className="cell temp">
-            <Input style={inputStyle} initValue="0" />
+            <Input
+              className={key}
+              style={inputStyle}
+              callback={this.changeRollValue}
+              val={tempAdj[key]}
+            />
           </td>
           <td className="cell temp disabled">{tempMod}</td>
         </tr>

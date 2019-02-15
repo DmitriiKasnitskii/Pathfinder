@@ -3,5 +3,12 @@ export interface MyProps {
 }
 
 export interface MyState {
-
+  tempAdj: {
+    STR: string,
+    DEX: string,
+    CON: string,
+    INT: string,
+    WIS: string,
+    CHA: string
+  }
 }
