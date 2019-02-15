@@ -4,7 +4,8 @@ export interface MyProps {
     initValue?: string,
     val?: string,
     roll?: boolean,
-    callback?: (value: string) => void
+    className?: string,
+    callback?: (e: any) => void
 }
 
 export interface MyState {

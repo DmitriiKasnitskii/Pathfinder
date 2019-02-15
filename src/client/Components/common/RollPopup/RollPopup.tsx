@@ -24,15 +24,15 @@ class RollPopup extends React.PureComponent<MyProps, MyState> {
     }))
   );
 
-  changeRollValue = (value: string) => (
+  changeRollValue = (e: any) => (
     this.setState(() => ({
-      rollValue: value
+      rollValue: e.target.value
     }))
   );
 
-  changeModValue = (value: string) => (
+  changeModValue = (e: any) => (
     this.setState(() => ({
-      modValue: value
+      modValue: e.target.value
     }))
   );
 

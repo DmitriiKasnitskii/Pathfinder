@@ -243,7 +243,8 @@ export const savingThrows = {
     Magic: 0,
     Misc: 0,
     Epic: 0,
-    Temp: 0
+    EN: 'Constitution',
+    RU: 'Телосложение'
   },
   REFLEX: {
     Base: 0,
@@ -251,7 +252,8 @@ export const savingThrows = {
     Magic: 0,
     Misc: 0,
     Epic: 0,
-    Temp: 0
+    EN: 'Dexterity',
+    RU: 'Ловкость'
   },
   WILL: {
     Base: 0,
@@ -259,6 +261,7 @@ export const savingThrows = {
     Magic: 0,
     Misc: 0,
     Epic: 0,
-    Temp: 0
+    EN: 'Wisdom',
+    RU: 'Мудрость'
   }
 };

@@ -19,7 +19,7 @@ export default class Input extends React.PureComponent <MyProps, MyState> {
     e.persist();
     const { callback } = this.props;
     if (callback) {
-      callback(e.target.value);
+      callback(e);
     }
     this.setState(() => ({
       value: e.target.value
@@ -28,7 +28,9 @@ export default class Input extends React.PureComponent <MyProps, MyState> {
 
   render() {
     const { value } = this.state;
-    const { style, label, val } = this.props;
+    const {
+      style, label, val, className
+    } = this.props;
     const id: string = IDgen();
 
     return (
@@ -36,7 +38,13 @@ export default class Input extends React.PureComponent <MyProps, MyState> {
         <span style={{ marginRight: '10px' }}>
           {label}
         </span>
-        <input id={id} value={val || value} style={style} onChange={this.onChange} />
+        <input
+          id={id}
+          className={className}
+          value={val || value}
+          style={style}
+          onChange={this.onChange}
+        />
       </label>
     );
   }
