@@ -37,7 +37,7 @@
             <type label="SET" length="1" sql="SET" quote=""/>
             <type label="Bit" length="0" sql="bit" quote=""/>
         </group>
-    </datatypes><table x="504" y="6" name="Users">
+    </datatypes><table x="498" y="114" name="Users">
     <row name="id" null="1" autoincrement="1">
         <datatype>INTEGER</datatype>
         <default>NULL</default></row>
@@ -54,40 +54,13 @@
         <part>id</part>
     </key>
 </table>
-    <table x="724" y="55" name="Characters">
-        <row name="id" null="1" autoincrement="1">
-            <datatype>INTEGER</datatype>
-            <default>NULL</default></row>
-        <row name="id_owner" null="0" autoincrement="0">
-            <datatype>INTEGER</datatype>
-            <default>NULL</default><relation table="Users" row="id" />
-        </row>
-        <row name="id_skills" null="1" autoincrement="0">
-            <datatype>INTEGER</datatype>
-            <default>NULL</default><relation table="Skills" row="id" />
-        </row>
-        <row name="id_mainStats" null="1" autoincrement="0">
-            <datatype>INTEGER</datatype>
-            <default>NULL</default><relation table="MainStats" row="id" />
-        </row>
-        <row name="id_equip" null="1" autoincrement="0">
-            <datatype>INTEGER</datatype>
-            <default>NULL</default></row>
-        <row name="id_common" null="1" autoincrement="0">
-            <datatype>INTEGER</datatype>
-            <default>NULL</default><relation table="Common" row="id" />
-        </row>
-        <key type="PRIMARY" name="">
-            <part>id</part>
-        </key>
-    </table>
-    <table x="496" y="160" name="MainStats">
+    <table x="467" y="254" name="MainStats">
         <row name="id" null="1" autoincrement="1">
             <datatype>INTEGER</datatype>
             <default>NULL</default></row>
         <row name="Name" null="1" autoincrement="0">
             <datatype>VARCHAR</datatype>
-        </row>
+            <default>NULL</default></row>
         <row name="id_score" null="0" autoincrement="0">
             <datatype>INTEGER</datatype>
         </row>
@@ -104,13 +77,14 @@
             <part>id</part>
         </key>
     </table>
-    <table x="1001" y="6" name="Skills">
+    <table x="1302" y="19" name="CharacterSkills">
         <row name="id" null="1" autoincrement="1">
             <datatype>INTEGER</datatype>
             <default>NULL</default></row>
         <row name="id_skillName" null="0" autoincrement="0">
             <datatype>INTEGER</datatype>
-            <default>0</default></row>
+            <default>0</default><relation table="Skills" row="id" />
+        </row>
         <row name="Ability" null="1" autoincrement="0">
             <datatype>INTEGER</datatype>
             <default>NULL</default></row>
@@ -124,13 +98,10 @@
             <part>id</part>
         </key>
     </table>
-    <table x="1005" y="203" name="Common">
+    <table x="826" y="21" name="Common">
         <row name="id" null="1" autoincrement="1">
             <datatype>INTEGER</datatype>
             <default>NULL</default></row>
-        <row name="Name" null="1" autoincrement="0">
-            <datatype>VARCHAR</datatype>
-            <default>'CharacterName'</default></row>
         <row name="id_class" null="0" autoincrement="0">
             <datatype>INTEGER</datatype>
             <default>1</default><relation table="Classes" row="id" />
@@ -139,9 +110,6 @@
             <datatype>INTEGER</datatype>
             <default>NULL</default><relation table="Deities" row="id" />
         </row>
-        <row name="Region" null="1" autoincrement="0">
-            <datatype>VARCHAR</datatype>
-            <default>NULL</default></row>
         <row name="id_alignment" null="0" autoincrement="0">
             <datatype>INTEGER</datatype>
             <default>1</default><relation table="Alignment" row="id" />
@@ -154,15 +122,14 @@
             <datatype>INTEGER</datatype>
             <default>NULL</default><relation table="Sizes" row="id" />
         </row>
-        <row name="Height" null="1" autoincrement="0">
-            <datatype>VARCHAR</datatype>
-            <default>NULL</default></row>
-        <row name="Weight" null="1" autoincrement="0">
-            <datatype>VARCHAR</datatype>
-            <default>NULL</default></row>
-        <row name="Vision" null="1" autoincrement="0">
-            <datatype>VARCHAR</datatype>
-            <default>NULL</default></row>
+        <row name="id_owner" null="0" autoincrement="0">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default><relation table="Users" row="id" />
+        </row>
+        <row name="id_mainStats" null="0" autoincrement="0">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default><relation table="MainStats" row="id" />
+        </row>
         <row name="Level" null="0" autoincrement="0">
             <datatype>INTEGER</datatype>
             <default>1</default></row>
@@ -172,6 +139,21 @@
         <row name="NextExp" null="0" autoincrement="0">
             <datatype>INTEGER</datatype>
             <default>3000</default></row>
+        <row name="Name" null="1" autoincrement="0">
+            <datatype>VARCHAR</datatype>
+            <default>'CharacterName'</default></row>
+        <row name="Region" null="1" autoincrement="0">
+            <datatype>VARCHAR</datatype>
+            <default>NULL</default></row>
+        <row name="Height" null="1" autoincrement="0">
+            <datatype>VARCHAR</datatype>
+            <default>NULL</default></row>
+        <row name="Weight" null="1" autoincrement="0">
+            <datatype>VARCHAR</datatype>
+            <default>NULL</default></row>
+        <row name="Vision" null="1" autoincrement="0">
+            <datatype>VARCHAR</datatype>
+            <default>NULL</default></row>
         <row name="Age" null="1" autoincrement="0">
             <datatype>VARCHAR</datatype>
             <default>NULL</default></row>
@@ -184,6 +166,9 @@
         <row name="Hairs" null="0" autoincrement="0">
             <datatype>VARCHAR</datatype>
             <default>'NULL'</default></row>
+        <row name="Bio" null="1" autoincrement="0">
+            <datatype>VARCHAR</datatype>
+            <default>NULL</default></row>
         <key type="PRIMARY" name="">
             <part>id</part>
         </key>
@@ -251,5 +236,53 @@
         <key type="PRIMARY" name="">
             <part>id</part>
         </key>
+    </table>
+    <table x="199" y="23" name="Items">
+        <row name="id" null="1" autoincrement="1">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default></row>
+        <row name="Name" null="0" autoincrement="0">
+            <datatype>VARCHAR(Name)</datatype>
+            <default>'NULL'</default></row>
+        <row name="Description" null="1" autoincrement="0">
+            <datatype>VARCHAR</datatype>
+            <default>NULL</default></row>
+        <key type="PRIMARY" name="">
+            <part>id</part>
+        </key>
+    </table>
+    <table x="425" y="24" name="Character-Items">
+        <row name="id_item" null="0" autoincrement="0">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default><relation table="Items" row="id" />
+        </row>
+        <row name="id_character" null="0" autoincrement="0">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default><relation table="Common" row="id" />
+        </row>
+    </table>
+    <table x="1687" y="35" name="Skills">
+        <row name="id" null="1" autoincrement="1">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default></row>
+        <row name="Name" null="0" autoincrement="0">
+            <datatype>VARCHAR</datatype>
+            <default>'NULL'</default></row>
+        <row name="Description" null="0" autoincrement="0">
+            <datatype>VARCHAR</datatype>
+            <default>'NULL'</default></row>
+        <key type="PRIMARY" name="">
+            <part>id</part>
+        </key>
+    </table>
+    <table x="1072" y="17" name="Character-Skills">
+        <row name="id_character" null="0" autoincrement="0">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default><relation table="Common" row="id" />
+        </row>
+        <row name="id_skill" null="0" autoincrement="0">
+            <datatype>INTEGER</datatype>
+            <default>NULL</default><relation table="CharacterSkills" row="id" />
+        </row>
     </table>
 </sql>
