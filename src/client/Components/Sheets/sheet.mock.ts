@@ -21,179 +21,319 @@ export const mainData = {
 
 export const skills = {
   Acrobatics: {
-    Untrained: true,
-    ArmorPenalty: true,
-    KeyAbility: 'DEX'
+    rank: 0,
+    class: true,
+    untrained: true,
+    armorPenalty: true,
+    keyAbility: 'DEX',
+    EN: 'Acrobatics',
+    RU: 'Акробатика'
   },
   Appraise: {
-    Untrained: true,
-    ArmorPenalty: false,
-    KeyAbility: 'INT'
+    rank: 0,
+    class: true,
+    untrained: true,
+    armorPenalty: false,
+    keyAbility: 'INT',
+    EN: 'Appraise',
+    RU: 'Оценка'
   },
   Bluff: {
-    Untrained: true,
-    ArmorPenalty: false,
-    KeyAbility: 'CHA'
+    rank: 0,
+    class: true,
+    untrained: true,
+    armorPenalty: false,
+    keyAbility: 'CHA',
+    EN: 'Bluff',
+    RU: 'Блеф'
   },
   Climb: {
-    Untrained: true,
-    ArmorPenalty: true,
-    KeyAbility: 'STR'
+    rank: 0,
+    class: true,
+    untrained: true,
+    armorPenalty: true,
+    keyAbility: 'STR',
+    EN: 'Climb',
+    RU: 'Лазание'
   },
   Craft: {
-    Untrained: true,
-    ArmorPenalty: false,
-    KeyAbility: 'INT'
+    rank: 0,
+    class: true,
+    untrained: true,
+    armorPenalty: false,
+    keyAbility: 'INT',
+    EN: 'Craft',
+    RU: 'Крафт'
   },
   Diplomacy: {
-    Untrained: true,
-    ArmorPenalty: false,
-    KeyAbility: 'CHA'
+    rank: 1,
+    class: true,
+    untrained: true,
+    armorPenalty: false,
+    keyAbility: 'CHA',
+    EN: 'Diplomacy',
+    RU: 'Дипломатия'
   },
   DisableDevice: {
-    Untrained: false,
-    ArmorPenalty: true,
-    KeyAbility: 'DEX'
+    rank: 0,
+    class: true,
+    untrained: false,
+    armorPenalty: true,
+    keyAbility: 'DEX',
+    EN: 'DisableDevice',
+    RU: 'Обезвреживание ловушек'
   },
   Disguise: {
-    Untrained: true,
-    ArmorPenalty: false,
-    KeyAbility: 'CHA'
+    rank: 0,
+    class: true,
+    untrained: true,
+    armorPenalty: false,
+    keyAbility: 'CHA',
+    EN: 'Disguise',
+    RU: 'Маскировка'
   },
   EscapeArtist: {
-    Untrained: true,
-    ArmorPenalty: true,
-    KeyAbility: 'DEX'
+    rank: 0,
+    class: true,
+    untrained: true,
+    armorPenalty: true,
+    keyAbility: 'DEX',
+    EN: 'Escape Artist',
+    RU: 'Изворотливость'
   },
   Fly: {
-    Untrained: true,
-    ArmorPenalty: true,
-    KeyAbility: 'DEX'
+    rank: 0,
+    class: true,
+    untrained: true,
+    armorPenalty: true,
+    keyAbility: 'DEX',
+    EN: 'Fly',
+    RU: 'Полёт'
   },
   HandleAnimal: {
-    Untrained: false,
-    ArmorPenalty: false,
-    KeyAbility: 'CHA'
+    rank: 0,
+    class: true,
+    untrained: false,
+    armorPenalty: false,
+    keyAbility: 'CHA',
+    EN: 'Handle Animal',
+    RU: 'Дрессировка'
   },
   Heal: {
-    Untrained: true,
-    ArmorPenalty: false,
-    KeyAbility: 'WIS'
+    rank: 0,
+    class: true,
+    untrained: true,
+    armorPenalty: false,
+    keyAbility: 'WIS',
+    EN: 'Heal',
+    RU: 'Лечение'
   },
   Intimidate: {
-    Untrained: true,
-    ArmorPenalty: false,
-    KeyAbility: 'CHA'
+    rank: 0,
+    class: true,
+    untrained: true,
+    armorPenalty: false,
+    keyAbility: 'CHA',
+    EN: 'Intimidate',
+    RU: 'Запугивание'
   },
   KnowledgeArcana: {
-    Untrained: false,
-    ArmorPenalty: false,
-    KeyAbility: 'INT'
+    rank: 1,
+    class: true,
+    untrained: false,
+    armorPenalty: false,
+    keyAbility: 'INT',
+    EN: 'Knowledge (Arcana)',
+    RU: 'Знание (Магия)'
   },
   KnowledgeDungeoneering: {
-    Untrained: false,
-    ArmorPenalty: false,
-    KeyAbility: 'INT'
+    rank: 0,
+    class: true,
+    untrained: false,
+    armorPenalty: false,
+    keyAbility: 'INT',
+    EN: 'Knowledge (Dungeoneering)',
+    RU: 'Знание (Подземелья)'
   },
   KnowledgeEngineering: {
-    Untrained: false,
-    ArmorPenalty: false,
-    KeyAbility: 'INT'
+    rank: 0,
+    class: true,
+    untrained: false,
+    armorPenalty: false,
+    keyAbility: 'INT',
+    EN: 'Knowledge (Engineering)',
+    RU: 'Знание (Инженерия)'
   },
   KnowledgeGeography: {
-    Untrained: false,
-    ArmorPenalty: false,
-    KeyAbility: 'INT'
+    rank: 0,
+    class: true,
+    untrained: false,
+    armorPenalty: false,
+    keyAbility: 'INT',
+    EN: 'Knowledge (Geography)',
+    RU: 'Знание (География)'
   },
   KnowledgeHistory: {
-    Untrained: false,
-    ArmorPenalty: false,
-    KeyAbility: 'INT'
+    rank: 0,
+    class: true,
+    untrained: false,
+    armorPenalty: false,
+    keyAbility: 'INT',
+    EN: 'Knowledge (History)',
+    RU: 'Знание (История)'
   },
   KnowledgeNature: {
-    Untrained: false,
-    ArmorPenalty: false,
-    KeyAbility: 'INT'
+    rank: 0,
+    class: true,
+    untrained: false,
+    armorPenalty: false,
+    keyAbility: 'INT',
+    EN: 'Knowledge (Nature)',
+    RU: 'Знание (Природа)'
   },
   KnowledgeNobility: {
-    Untrained: false,
-    ArmorPenalty: false,
-    KeyAbility: 'INT'
+    rank: 0,
+    class: true,
+    untrained: false,
+    armorPenalty: false,
+    keyAbility: 'INT',
+    EN: 'Knowledge (Nobility)',
+    RU: 'Знание ()'
   },
   KnowledgePlanes: {
-    Untrained: false,
-    ArmorPenalty: false,
-    KeyAbility: 'INT'
+    rank: 0,
+    class: true,
+    untrained: false,
+    armorPenalty: false,
+    keyAbility: 'INT',
+    EN: 'Knowledge (Planes)',
+    RU: 'Знание (Равнины)'
   },
   KnowledgeReligion: {
-    Untrained: false,
-    ArmorPenalty: false,
-    KeyAbility: 'INT'
+    rank: 0,
+    class: true,
+    untrained: false,
+    armorPenalty: false,
+    keyAbility: 'INT',
+    EN: 'Knowledge (Religion)',
+    RU: 'Знание (Религия)'
   },
   KnowledgeLocal: {
-    Untrained: false,
-    ArmorPenalty: false,
-    KeyAbility: 'INT'
+    rank: 0,
+    class: true,
+    untrained: false,
+    armorPenalty: false,
+    keyAbility: 'INT',
+    EN: 'Knowledge (Local)',
+    RU: 'Знание ()'
   },
   Linguistic: {
-    Untrained: false,
-    ArmorPenalty: false,
-    KeyAbility: 'INT'
+    rank: 0,
+    class: true,
+    untrained: false,
+    armorPenalty: false,
+    keyAbility: 'INT',
+    EN: 'Linguistic',
+    RU: 'Языкознание'
   },
   Perception: {
-    Untrained: true,
-    ArmorPenalty: false,
-    KeyAbility: 'WIS'
+    rank: 1,
+    class: true,
+    untrained: true,
+    armorPenalty: false,
+    keyAbility: 'WIS',
+    EN: 'Perception',
+    RU: 'Внимание'
   },
   Perform: {
-    Untrained: true,
-    ArmorPenalty: false,
-    KeyAbility: 'CHA'
+    rank: 0,
+    class: true,
+    untrained: true,
+    armorPenalty: false,
+    keyAbility: 'CHA',
+    EN: 'Perform',
+    RU: 'Исполнение'
   },
   Profession: {
-    Untrained: false,
-    ArmorPenalty: false,
-    KeyAbility: 'WIS'
+    rank: 0,
+    class: true,
+    untrained: false,
+    armorPenalty: false,
+    keyAbility: 'WIS',
+    EN: 'Profession',
+    RU: 'Профессия'
   },
   Ride: {
-    Untrained: true,
-    ArmorPenalty: true,
-    KeyAbility: 'DEX'
+    rank: 0,
+    class: true,
+    untrained: true,
+    armorPenalty: true,
+    keyAbility: 'DEX',
+    EN: 'Ride',
+    RU: 'Верховая езда'
   },
-  SenceMotive: {
-    Untrained: true,
-    ArmorPenalty: false,
-    KeyAbility: 'WIS'
+  SenseMotive: {
+    rank: 0,
+    class: true,
+    untrained: true,
+    armorPenalty: false,
+    keyAbility: 'WIS',
+    EN: 'Sense Motive',
+    RU: 'Проницательность'
   },
   SleightOfHand: {
-    Untrained: false,
-    ArmorPenalty: true,
-    KeyAbility: 'DEX'
+    rank: 0,
+    class: true,
+    untrained: false,
+    armorPenalty: true,
+    keyAbility: 'DEX',
+    EN: 'Sleight Of Hand',
+    RU: 'Ловкость рук'
   },
   Spellcraft: {
-    Untrained: true,
-    ArmorPenalty: false,
-    KeyAbility: 'INT'
+    rank: 0,
+    class: true,
+    untrained: true,
+    armorPenalty: false,
+    keyAbility: 'INT',
+    EN: 'Spellcraft',
+    RU: 'Spellcraft'
   },
   Stealth: {
-    Untrained: true,
-    ArmorPenalty: true,
-    KeyAbility: 'DEX'
+    rank: 0,
+    class: true,
+    untrained: true,
+    armorPenalty: true,
+    keyAbility: 'DEX',
+    EN: 'Stealth',
+    RU: 'Скрытность'
   },
   Survival: {
-    Untrained: true,
-    ArmorPenalty: false,
-    KeyAbility: 'WIS'
+    rank: 0,
+    class: true,
+    untrained: true,
+    armorPenalty: false,
+    keyAbility: 'WIS',
+    EN: 'Survival',
+    RU: 'Выживание'
   },
   Swim: {
-    Untrained: true,
-    ArmorPenalty: true,
-    KeyAbility: 'STR'
+    rank: 0,
+    class: true,
+    untrained: true,
+    armorPenalty: true,
+    keyAbility: 'STR',
+    EN: 'Swim',
+    RU: 'Плавание'
   },
   UseMagicDevice: {
-    Untrained: false,
-    ArmorPenalty: false,
-    KeyAbility: 'CHA'
+    rank: 0,
+    class: true,
+    untrained: false,
+    armorPenalty: false,
+    keyAbility: 'CHA',
+    EN: 'Use Magic Device',
+    RU: 'Использование магических устройств'
   },
 };
 

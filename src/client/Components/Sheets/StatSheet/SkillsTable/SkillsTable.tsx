@@ -1,9 +1,10 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { skills } from '../../sheet.mock';
-import './assets/skilltable.scss';
 import setVisibilityPopup from '../../../../actions/popup.actions';
+import { calcMod } from '../../../common/lib';
+import { skills, mainStats } from '../../sheet.mock';
 import { MyProps, MyState } from './ISkillsTable';
+import './assets/skilltable.scss';
 
 class SkillsTable extends React.PureComponent<MyProps, MyState> {
   render() {
@@ -11,16 +12,31 @@ class SkillsTable extends React.PureComponent<MyProps, MyState> {
     const rows: any = [];
 
     Object.keys(skills).forEach((key) => {
-      if (skills[key].Untrained) {
+      const { rank } = skills[key];
+
+      if (skills[key].untrained || rank > 0) {
+        const { locale } = this.props;
+        const { abilityScore } = mainStats[skills[key].keyAbility];
+        const abilityMod = calcMod((abilityScore - 10), 2);
+        const misc = skills[key].class && rank > 0 ? 3 + (rank - 1) : rank;
+        const sum = rank + abilityMod + misc;
+        const skillName = skills[key][locale];
+
         rows.push(
           <tr key={key}>
-            <td>1</td>
-            <td className="skillName" onKeyPress={() => { openPopup('3', key); }} onClick={() => { openPopup('3', key); }}>{key}</td>
-            <td>3</td>
-            <td>4</td>
-            <td>5</td>
-            <td>6</td>
-            <td>7</td>
+            <td>{skills[key].untrained ? '☑' : ''}</td>
+            <td
+              className="skillName"
+              onKeyPress={() => { openPopup('3', key); }}
+              onClick={() => { openPopup('3', key); }}
+            >
+              {skillName}
+            </td>
+            <td>{skills[key].keyAbility}</td>
+            <td>{sum}</td>
+            <td>{abilityMod}</td>
+            <td>{rank}</td>
+            <td>{misc}</td>
           </tr>
         );
       }
@@ -47,6 +63,9 @@ class SkillsTable extends React.PureComponent<MyProps, MyState> {
   }
 }
 
+const mapStateToProps = (state: any) => ({
+  locale: state.localeReducer.locale
+});
 
 const mapDispatchToProps = (dispatch: any) => ({
   openPopup: (value: string, skill: string) => dispatch(
@@ -57,4 +76,4 @@ const mapDispatchToProps = (dispatch: any) => ({
   )
 });
 
-export default connect(null, mapDispatchToProps)(SkillsTable);
+export default connect(mapStateToProps, mapDispatchToProps)(SkillsTable);
