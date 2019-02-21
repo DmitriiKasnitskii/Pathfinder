@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import { savingThrows } from '../../sheet.mock';
-import './assets/savingthrows.scss';
-import { MyProps, MyState } from './ISavingThrows';
 import Input from '../../../common/Input/Input';
+import { calcMod } from '../../../common/lib';
+import { mainStats, savingThrows } from '../../sheet.mock';
+import { MyProps, MyState } from './ISavingThrows';
+import './assets/savingthrows.scss';
+import setVisibilityPopup from '../../../../actions/popup.actions';
 
 class SavingThrows extends React.PureComponent <MyProps, MyState> {
-  constructor(props: {locale: string}) {
+  constructor(props: {openPopup: () => any, locale: string}) {
     super(props);
 
     this.state = {
@@ -31,7 +33,7 @@ class SavingThrows extends React.PureComponent <MyProps, MyState> {
 
   render() {
     const rows:any = [];
-    const { locale } = this.props;
+    const { locale, openPopup } = this.props;
     const { temp } = this.state;
     const inputStyle = {
       background: 'transparent',
@@ -41,22 +43,27 @@ class SavingThrows extends React.PureComponent <MyProps, MyState> {
     };
 
     Object.keys(savingThrows).forEach((key) => {
-      const base = savingThrows[key].Base;
-      const ability = savingThrows[key].Ability;
+      const { abilityScore } = mainStats[savingThrows[key].keyAbility];
+      const base = savingThrows[key].Base; // From character class
+      const abilityMod = calcMod((abilityScore - 10), 2);
       const magic = savingThrows[key].Magic;
       const misc = savingThrows[key].Misc;
       const epic = savingThrows[key].Epic;
-      const TOTAL = base + ability + magic + misc + epic + +temp[key];
+      const TOTAL = base + abilityMod + magic + misc + epic + +temp[key];
 
       rows.push(
         <tr key={key}>
-          <td className="mainColumn">
+          <td
+            className="mainColumn"
+            onKeyPress={() => { openPopup(TOTAL, key); }}
+            onClick={() => { openPopup(TOTAL, key); }}
+          >
             <span className="abbr">{key}</span>
             <span>{savingThrows[key][locale]}</span>
           </td>
           <td className="cell total">{TOTAL}</td>
           <td className="cell">{base}</td>
-          <td className="cell">{ability}</td>
+          <td className="cell">{abilityMod}</td>
           <td className="cell">{magic}</td>
           <td className="cell">{misc}</td>
           <td className="cell">{epic}</td>
@@ -99,4 +106,13 @@ const mapStateToProps = (state: any) => ({
   locale: state.localeReducer.locale
 });
 
-export default connect(mapStateToProps)(SavingThrows);
+const mapDispatchToProps = (dispatch: any) => ({
+  openPopup: (value: string, throwName: string) => dispatch(
+    {
+      type: setVisibilityPopup.OPEN,
+      payload: { initValue: value, skillName: throwName }
+    }
+  )
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(SavingThrows);

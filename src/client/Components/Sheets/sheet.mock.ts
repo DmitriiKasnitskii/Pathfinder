@@ -379,7 +379,7 @@ export const mainStats = {
 export const savingThrows = {
   FORT: {
     Base: 0,
-    Ability: 0,
+    keyAbility: 'CON',
     Magic: 0,
     Misc: 0,
     Epic: 0,
@@ -388,7 +388,7 @@ export const savingThrows = {
   },
   REFLEX: {
     Base: 0,
-    Ability: 0,
+    keyAbility: 'DEX',
     Magic: 0,
     Misc: 0,
     Epic: 0,
@@ -397,7 +397,7 @@ export const savingThrows = {
   },
   WILL: {
     Base: 0,
-    Ability: 0,
+    keyAbility: 'WIS',
     Magic: 0,
     Misc: 0,
     Epic: 0,

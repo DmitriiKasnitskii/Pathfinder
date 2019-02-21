@@ -27,8 +27,8 @@ class SkillsTable extends React.PureComponent<MyProps, MyState> {
             <td>{skills[key].untrained ? '☑' : ''}</td>
             <td
               className="skillName"
-              onKeyPress={() => { openPopup('3', key); }}
-              onClick={() => { openPopup('3', key); }}
+              onKeyPress={() => { openPopup(sum, key); }}
+              onClick={() => { openPopup(sum, key); }}
             >
               {skillName}
             </td>
