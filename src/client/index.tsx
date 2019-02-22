@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'connected-react-router';
 import App from './App';
-import configureStore, { history } from './store/main.store';
+import configureStore, { history } from './_store/main.store';
 
 const store = configureStore({});
 

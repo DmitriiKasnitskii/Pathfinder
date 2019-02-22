@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import Input from '../../../common/Input/Input';
 import { calcMod } from '../../../common/lib';
 import { mainStats, savingThrows } from '../../sheet.mock';
+import popupActions from '../../../../_actions/popup.actions';
 import { MyProps, MyState } from './ISavingThrows';
 import './assets/savingthrows.scss';
-import setVisibilityPopup from '../../../../actions/popup.actions';
 
 class SavingThrows extends React.PureComponent <MyProps, MyState> {
   constructor(props: {openPopup: () => any, locale: string}) {
@@ -108,10 +108,10 @@ const mapStateToProps = (state: any) => ({
 
 const mapDispatchToProps = (dispatch: any) => ({
   openPopup: (value: string, throwName: string) => dispatch(
-    {
-      type: setVisibilityPopup.OPEN,
-      payload: { initValue: value, skillName: throwName }
-    }
+    popupActions.openPopup({
+      initValue: value,
+      skillName: throwName
+    })
   )
 });
 

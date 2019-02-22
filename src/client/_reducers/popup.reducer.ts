@@ -1,4 +1,4 @@
-import popupActions from '../actions/popup.actions';
+import popupConstants from '../_constants/popup.constants';
 
 const initState = { isVisible: false, initValue: '', skillName: '' };
 
@@ -13,14 +13,14 @@ export default function popupReducer(
   }
 ) {
   switch (action.type) {
-    case popupActions.OPEN: {
+    case popupConstants.OPEN: {
       return {
         ...state,
         isVisible: true,
         ...action.payload
       };
     }
-    case popupActions.CLOSE: {
+    case popupConstants.CLOSE: {
       return {
         ...state,
         isVisible: false,

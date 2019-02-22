@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { MyProps, MyState } from './IRollPopup';
-import setVisibilityPopup from '../../../actions/popup.actions';
+import popupActions from '../../../_actions/popup.actions';
 import './assets/rollpopup.scss';
 import Input from '../Input/Input';
 import { rand } from '../lib';
@@ -76,7 +76,7 @@ class RollPopup extends React.PureComponent<MyProps, MyState> {
 }
 
 const mapDispatchToProps = (dispatch: any) => ({
-  closePopup: () => dispatch({ type: setVisibilityPopup.CLOSE })
+  closePopup: () => dispatch(popupActions.closePopup())
 });
 
 const mapStateToProps = (state: any) => ({

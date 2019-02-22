@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import setVisibilityPopup from '../../../../actions/popup.actions';
+import popupActions from '../../../../_actions/popup.actions';
 import { calcMod } from '../../../common/lib';
 import { skills, mainStats } from '../../sheet.mock';
 import { MyProps, MyState } from './ISkillsTable';
@@ -69,10 +69,10 @@ const mapStateToProps = (state: any) => ({
 
 const mapDispatchToProps = (dispatch: any) => ({
   openPopup: (value: string, skill: string) => dispatch(
-    {
-      type: setVisibilityPopup.OPEN,
-      payload: { initValue: value, skillName: skill }
-    }
+    popupActions.openPopup({
+      initValue: value,
+      skillName: skill
+    })
   )
 });
 

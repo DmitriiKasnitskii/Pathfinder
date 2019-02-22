@@ -1,18 +1,18 @@
-import localeActions from '../actions/locale.actions';
+import localeConstants from '../_constants/locale.constants';
 
 const initState = { locale: 'EN' };
 
 export default function localeReducer(
   state: any = initState,
   action: {
-    type: string,
-    payload: { locale: string } }
+    type: string
+  }
 ) {
   switch (action.type) {
-    case localeActions.TOGGLE_LOCALE: {
+    case localeConstants.TOGGLE_LOCALE: {
       return {
         ...state,
-        ...action.payload
+        locale: state.locale === 'EN' ? 'RU' : 'EN'
       };
     }
     default: {
