@@ -18,7 +18,7 @@ const loadData = () => (dispatch: any) => {
 
   dispatch(request());
 
-  axios.get('/api/getMainData').then(
+  axios.get('/api/getMainSheetData').then(
     data => dispatch(success(data)),
     error => dispatch(failure(error))
   );

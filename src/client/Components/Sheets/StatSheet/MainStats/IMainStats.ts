@@ -1,5 +1,6 @@
 export interface MyProps {
-  locale: string
+  locale: string,
+  mainStats: any
 }
 
 export interface MyState {

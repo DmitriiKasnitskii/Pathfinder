@@ -14,7 +14,7 @@ export default function homePageReducer(
       return {
         ...state,
         loading: false,
-        data: action.payload
+        data: action.payload.data
       };
     default:
       return state;

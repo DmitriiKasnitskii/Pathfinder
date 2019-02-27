@@ -4,8 +4,7 @@ import { IDgen } from '../lib';
 import './assets/input.scss';
 
 export default class Input extends React.PureComponent <MyProps, MyState> {
-  constructor(props: { style: {}, label: string, initValue: string, val: string,
-    callback: (value: string) => void }) {
+  constructor(props: MyProps) {
     super(props);
 
     const { initValue } = this.props;

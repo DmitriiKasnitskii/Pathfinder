@@ -1,6 +1,8 @@
 export interface MyProps {
   openPopup: (initValue: string, throwName: string) => void,
-  locale: string
+  locale: string,
+  mainStats: any,
+  savingThrows: any
 }
 
 export interface MyState {

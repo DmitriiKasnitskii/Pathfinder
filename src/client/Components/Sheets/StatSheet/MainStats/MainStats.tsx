@@ -1,14 +1,15 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
 import { calcMod } from '../../../common/lib';
-import { mainStats } from '../../sheet.mock';
 import './assets/mainstats.scss';
 import Input from '../../../common/Input/Input';
 import { MyProps, MyState } from './IMainStats';
 
 class MainStats extends React.PureComponent <MyProps, MyState> {
-  constructor(props: {locale: string}) {
+  constructor(props: MyProps) {
     super(props);
+
+    const { mainStats } = this.props;
 
     this.state = {
       tempAdj: {
@@ -35,7 +36,7 @@ class MainStats extends React.PureComponent <MyProps, MyState> {
 
   render() {
     const rows: any = [];
-    const { locale } = this.props;
+    const { locale, mainStats } = this.props;
     const inputStyle = {
       background: 'transparent',
       border: '1px dashed black',
@@ -91,7 +92,8 @@ class MainStats extends React.PureComponent <MyProps, MyState> {
 }
 
 const mapStateToProps = (state: any) => ({
-  locale: state.localeReducer.locale
+  locale: state.localeReducer.locale,
+  mainStats: state.homePageReducer.data.response.mainStats
 });
 
 export default connect(mapStateToProps)(MainStats);

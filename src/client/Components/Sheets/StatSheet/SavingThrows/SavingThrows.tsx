@@ -2,13 +2,12 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import Input from '../../../common/Input/Input';
 import { calcMod } from '../../../common/lib';
-import { mainStats, savingThrows } from '../../sheet.mock';
 import popupActions from '../../../../_actions/popup.actions';
 import { MyProps, MyState } from './ISavingThrows';
 import './assets/savingthrows.scss';
 
 class SavingThrows extends React.PureComponent <MyProps, MyState> {
-  constructor(props: {openPopup: () => any, locale: string}) {
+  constructor(props: MyProps) {
     super(props);
 
     this.state = {
@@ -33,7 +32,9 @@ class SavingThrows extends React.PureComponent <MyProps, MyState> {
 
   render() {
     const rows:any = [];
-    const { locale, openPopup } = this.props;
+    const {
+      locale, openPopup, mainStats, savingThrows
+    } = this.props;
     const { temp } = this.state;
     const inputStyle = {
       background: 'transparent',
@@ -103,7 +104,9 @@ class SavingThrows extends React.PureComponent <MyProps, MyState> {
 }
 
 const mapStateToProps = (state: any) => ({
-  locale: state.localeReducer.locale
+  locale: state.localeReducer.locale,
+  mainStats: state.homePageReducer.data.response.mainStats,
+  savingThrows: state.homePageReducer.data.response.savingThrows
 });
 
 const mapDispatchToProps = (dispatch: any) => ({

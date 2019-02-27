@@ -1,11 +1,13 @@
 import * as React from 'react';
 import './assets/traitsheet.scss';
+import TopPart from '../TopPart/TopPart';
 
 const TraitSheet = () => (
   <div>
-    <div>1</div>
-    <div>2</div>
+    <TopPart />
     <div>3</div>
+    <div>4</div>
+    <div>5</div>
   </div>
 );
 

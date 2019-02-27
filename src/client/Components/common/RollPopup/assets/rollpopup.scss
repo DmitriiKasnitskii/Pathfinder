@@ -1,7 +1,8 @@
 .rollPopup {
-  position: absolute;
+  position: fixed;
   display: grid;
   grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
+  top: 30%;
   width: 30vw;
   height: 40vh;
   min-width: 350px;
@@ -27,6 +28,7 @@
       position: relative;
       display: inline-block;
       cursor: pointer;
+      background-color: transparent;
       background-image: url("dices.png");
       background-position: center;
       background-size: contain;

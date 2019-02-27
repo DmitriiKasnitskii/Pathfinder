@@ -22,7 +22,7 @@ class TopPart extends React.PureComponent<MyProps, MyState> {
 }
 
 const mapStateToProps = (state: any) => ({
-  mainData: state.homePageReducer.data.data.mainData
+  mainData: state.homePageReducer.data.response.mainData
 });
 
 export default connect(mapStateToProps, null)(TopPart);

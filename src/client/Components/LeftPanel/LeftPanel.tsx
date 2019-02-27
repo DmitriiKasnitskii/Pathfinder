@@ -6,7 +6,7 @@ import './assets/leftpanel.scss';
 const { Component } = React;
 
 export default class LeftPanel extends Component <MyProps, MyState> {
-  constructor(props: object) {
+  constructor(props: MyProps) {
     super(props);
 
     this.state = {

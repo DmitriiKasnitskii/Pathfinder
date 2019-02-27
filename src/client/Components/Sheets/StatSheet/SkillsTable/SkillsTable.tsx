@@ -2,13 +2,12 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import popupActions from '../../../../_actions/popup.actions';
 import { calcMod } from '../../../common/lib';
-import { skills, mainStats } from '../../sheet.mock';
 import { MyProps, MyState } from './ISkillsTable';
 import './assets/skilltable.scss';
 
 class SkillsTable extends React.PureComponent<MyProps, MyState> {
   render() {
-    const { openPopup } = this.props;
+    const { openPopup, mainStats, skills } = this.props;
     const rows: any = [];
 
     Object.keys(skills).forEach((key) => {
@@ -64,7 +63,9 @@ class SkillsTable extends React.PureComponent<MyProps, MyState> {
 }
 
 const mapStateToProps = (state: any) => ({
-  locale: state.localeReducer.locale
+  locale: state.localeReducer.locale,
+  mainStats: state.homePageReducer.data.response.mainStats,
+  skills: state.homePageReducer.data.response.skills
 });
 
 const mapDispatchToProps = (dispatch: any) => ({

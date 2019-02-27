@@ -7,7 +7,7 @@ import Input from '../Input/Input';
 import { rand } from '../lib';
 
 class RollPopup extends React.PureComponent<MyProps, MyState> {
-  constructor(props: {closePopup: () => void, initValue: string, skillName: string}) {
+  constructor(props: MyProps) {
     super(props);
 
     const { initValue } = this.props;
