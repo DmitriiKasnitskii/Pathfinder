@@ -46,13 +46,7 @@ class RollPopup extends React.PureComponent<MyProps, MyState> {
       <div className="rollPopup">
         <div className="rollHeader">
           <span>Roll your Destiny</span>
-          <span style={{
-            position: 'relative',
-            top: '-10px'
-          }}
-          >
-            {`(${skillName})`}
-          </span>
+          <span>{`(${skillName})`}</span>
         </div>
         <div className="rollRow">
           <Input callback={this.changeRollValue} val={rollValue} label={rollText} />

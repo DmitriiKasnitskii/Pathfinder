@@ -2,8 +2,10 @@
   position: absolute;
   display: grid;
   grid-template-rows: 1fr 1fr 2fr 1fr 1fr;
-  width: 500px;
-  height: 400px;
+  width: 30vw;
+  height: 40vh;
+  min-width: 350px;
+  min-height: 200px;
   background: white;
   z-index: 1;
   margin: 0 auto;
@@ -45,5 +47,7 @@
     justify-content: center;
     align-items: center;
     background: #89d689;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
   }
 }
