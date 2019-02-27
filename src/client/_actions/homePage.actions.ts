@@ -1,3 +1,4 @@
+import axios from 'axios';
 import homePageConstants from '../_constants/homePage.constants';
 
 const loadData = () => (dispatch: any) => {
@@ -17,11 +18,10 @@ const loadData = () => (dispatch: any) => {
 
   dispatch(request());
 
-  fetch('/api/Data/getData', {
-    method: 'Get',
-    credentials: 'include', // mode: 'no-cors',
-  }).then(response => response.json())
-    .then(data => dispatch(success(data)), error => dispatch(failure(error)));
+  axios.get('/api/getMainData').then(
+    data => dispatch(success(data)),
+    error => dispatch(failure(error))
+  );
 };
 
 export default {
