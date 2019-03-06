@@ -1,16 +1,16 @@
-import homePageConstants from '../_constants/homePage.constants';
+import bioSheetConstants from '../_constants/bioSheet.constants';
 
-export default function homePageReducer(
+export default function bioSheetReducer(
   state = { loading: true },
   action: {type: string, payload: any}
 ) {
   switch (action.type) {
-    case homePageConstants.REQUEST:
+    case bioSheetConstants.REQUEST:
       return {
         ...state,
         loading: true
       };
-    case homePageConstants.SUCCESS:
+    case bioSheetConstants.SUCCESS:
       return {
         ...state,
         loading: false,

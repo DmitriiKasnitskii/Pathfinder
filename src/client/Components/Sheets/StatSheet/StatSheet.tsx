@@ -6,13 +6,19 @@ import SkillsTable from './SkillsTable/SkillsTable';
 import MainStats from './MainStats/MainStats';
 import SavingThrows from './SavingThrows/SavingThrows';
 import { MyProps, MyState } from './IStatSheet';
-import homePageActions from '../../../_actions/homePage.actions';
+import requestActions from '../../../_actions/requests.actions';
 
 class StatSheet extends React.PureComponent<MyProps, MyState> {
   componentDidMount(): void {
-    const { fetchMainData } = this.props;
+    const { fetchMainData, data } = this.props;
+    const reqParam = {
+      sheetType: 'MainSheet'
+    };
 
-    fetchMainData();
+
+    if (!data) {
+      fetchMainData(reqParam);
+    }
   }
 
   render(): React.ReactNode {
@@ -32,11 +38,12 @@ class StatSheet extends React.PureComponent<MyProps, MyState> {
 }
 
 const mapDispatchToProps = (dispatch: any) => ({
-  fetchMainData: () => dispatch(homePageActions.loadData())
+  fetchMainData: (reqParam: {sheetType: string}) => dispatch(requestActions.loadData(reqParam))
 });
 
 const mapStateToProps = (state: any) => ({
-  loading: state.homePageReducer.loading
+  loading: state.homePageReducer.loading,
+  data: Boolean(state.homePageReducer.data)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(StatSheet);

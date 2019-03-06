@@ -1,5 +1,7 @@
 export interface MyProps {
-    visible: boolean
+    fetchMainData: (reqParam: {sheetType: string}) => any,
+    loading: boolean,
+    data: boolean
 }
 
 export interface MyState {

@@ -1,9 +1,11 @@
 import popupConstants from '../_constants/popup.constants';
 
-const openPopup = (val: {initValue: string, skillName: string}) => (dispatch: (arg0: {
-  type: string;
-  payload: {initValue: string, skillName: string};
-}) => void) => {
+interface IVal {
+  initValue: string,
+  skillName: string
+}
+
+const openPopup = (val: IVal) => (dispatch: (arg0: { type: string; payload: IVal;}) => void) => {
   dispatch({
     type: popupConstants.OPEN,
     payload: {

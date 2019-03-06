@@ -1,16 +1,16 @@
-import homePageConstants from '../_constants/homePage.constants';
+import magicSheetConstants from '../_constants/magicSheet.constants';
 
-export default function homePageReducer(
+export default function magicSheetReducer(
   state = { loading: true },
   action: {type: string, payload: any}
 ) {
   switch (action.type) {
-    case homePageConstants.REQUEST:
+    case magicSheetConstants.REQUEST:
       return {
         ...state,
         loading: true
       };
-    case homePageConstants.SUCCESS:
+    case magicSheetConstants.SUCCESS:
       return {
         ...state,
         loading: false,

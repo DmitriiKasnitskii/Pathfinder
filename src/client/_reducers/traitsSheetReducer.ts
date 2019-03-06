@@ -1,16 +1,16 @@
-import homePageConstants from '../_constants/homePage.constants';
+import traitsSheetConstants from '../_constants/traitsSheet.constants';
 
-export default function homePageReducer(
+export default function traitsSheetReducer(
   state = { loading: true },
   action: {type: string, payload: any}
 ) {
   switch (action.type) {
-    case homePageConstants.REQUEST:
+    case traitsSheetConstants.REQUEST:
       return {
         ...state,
         loading: true
       };
-    case homePageConstants.SUCCESS:
+    case traitsSheetConstants.FAILURE:
       return {
         ...state,
         loading: false,
